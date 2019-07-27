@@ -14,7 +14,19 @@ class SceneMain extends Phaser.Scene {
 
     }
     create() {
+        this.load.html('guessInput', 'text/guessInput.html');
         this.add.image(400, 300, 'weightlifting');
+
+        var element = this.add.dom(0, 0).createFromCache('guessInput').setOrigin(0,0);
+        
+        element.addListener('click');
+
+        element.on('click', function (event) {
+            if (event.target.name === 'playButton')
+            {
+                var inputText = this.getChildByName('textArea');
+            }
+        });
     }
     update() {
 
