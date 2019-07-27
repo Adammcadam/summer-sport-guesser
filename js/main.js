@@ -5,7 +5,7 @@ window.onload = function()
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        parent: 'game',
+        parent: 'phaser-game',
         scene: [game],
         physics: {
             default: 'arcade',

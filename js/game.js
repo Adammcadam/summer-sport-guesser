@@ -1,10 +1,10 @@
 class SceneMain extends Phaser.Scene {
     constructor() {
-        super('SceneMain');
+        super('game');
     }
     preload() 
     {
-        
+        this.load.image()
     }
     create() 
     {
