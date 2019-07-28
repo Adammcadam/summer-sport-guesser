@@ -2,13 +2,34 @@ body {
     font-family: 'Lobster', cursive;
 }
 
+/*backgrong colors*/
+
+.blue {
+    background-color: #308FFF;
+}
+
+.bg-image {
+    background-image: url("../bg-image/sun.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top left;
+}
+
+.bg-color {
+    background-color: #F8FF63;
+}
+
+/*Margins*/
+
 .margin-top {
     margin-top: 25px;
 }
 
-.margin-bottom {
-    margin-bottom: 90px;
+.padding-bottom {
+    padding-bottom: 90px;
 }
+
+/*text*/
 
 .title {
     font-size: 70px;
