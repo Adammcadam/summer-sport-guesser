@@ -60,7 +60,7 @@ $('#guess-btn').click(function() {
     
     //If correct guess
     if (guess === sport) {
-        $("#sport-pic").css({ 'filter': 'blur(0px)' });
+        $("#sport-pic").css({ 'filter': 'blur(' + pixel + 'px)' });
     }
 
     // If wrong guess
