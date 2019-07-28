@@ -55,6 +55,11 @@ $('#guess-btn').click(function() {
     // Clear input field
     $('#guess-box').val('')
     $('#guess-box').focus()
+    
+    //If correct guess
+    if (guess === sport) {
+        $("#sport-pic").css({ 'filter': 'blur(0px)' });
+    }
 
     // If wrong guess
     if (guess != sport) {
@@ -134,4 +139,3 @@ $('#guess-btn').click(function() {
 })
 
 f_new_round()
-console.log(pixel - blurRemoval)
