@@ -35,8 +35,8 @@ console.log('Guess: ', guess)
 
 // New Round
 function f_new_round() {
-    // unblurs the image on each guess
-    $("#sport-pic").css({ 'filter' : 'blur(' + pixel + 'px)' });
+    // blur the image on round start 
+    $("#sport-pic").css({ 'filter' : 'blur(' + pixel + 'px)'});
     // Assign random sport to guess
     sport = images[Math.floor(Math.random() * num_images)]
     // Load image for round
