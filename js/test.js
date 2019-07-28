@@ -29,6 +29,9 @@ console.log('Round: ', round)
 console.log('Sport: ', sport)
 console.log('Guess: ', guess)
 
+// Tile overlay
+
+
 // New Round
 function f_new_round() {
     // Assign random sport to guess
@@ -82,3 +85,5 @@ $('#guess-btn').click(function() {
 })
 
 f_new_round()
+blockOverlay()
+
