@@ -46,18 +46,13 @@ function game_over() {
     location.reload();
 }
 
-function show_alert(message) {
-    alert(message);
-}
-
 // Guess Input
 $('#guess-btn').click(function() {
 
     // Remove blur on each guess
     $("#sport-pic").css({ 'filter': 'blur(' + blurTotal + 'px)' });
     // Store value of users guess
-    guess = document.getElementById('guess-box').value;
-    // Clear input field
+    guess = document.getElementById('guess-box').value.toLowerCase();
     $('#guess-box').val('')
     $('#guess-box').focus()
     
