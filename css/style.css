@@ -35,3 +35,7 @@ body {
 .sun {
     color: yellow;
 }
+
+.modal-body {
+    font-family: "Open Sans";
+}
