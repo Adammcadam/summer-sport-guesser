@@ -4,19 +4,26 @@ var images = ['archery', 'baseball', 'basketball', 'canoeing', 'climbing', 'cric
                           'wakeboarding', 'waterpolo', 'weightlifting', 'whitewaterrafting', 'windsurfing', 'yoga']
 
 var score = 0
+var round = 1
 var sport = []
-var answer;
+var guess;
 var num_images = images.length
 
 sport = images[Math.floor(Math.random() * num_images)]
+
+$('#score').text(score)
+$('#round').text(round)
+
 
 $("#sport-pic").html($("<img>").attr('src', 'images/'+sport+'.jpg'));
 
 // Guess Input
 $('#guess-btn').click(function () {
-    answer = document.getElementById('guess-box').value
-     if (answer == sport) {
+    guess = document.getElementById('guess-box').value
+     if (guess == sport) {
          $('#feedback').text("Correct!");
+         score += 10
+         $('#score').text(score)
      } else {
          $('#feedback').text("Wrong!");
      }
