@@ -14,6 +14,7 @@
     <!--<link rel="shortcut icon" href="static/images/[...].ico" type="image/x-icon">-->
     <!--CSS Style Sheet-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <!--JS Libraries-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.9.0/phaser.min.js"></script>
@@ -42,7 +43,7 @@
             <!--Page Title-->
             <div class="row text-center">
                 <div class="col-12">
-                    <h1>Summer Sport Guesser</h1>
+                    <h1 class="title">Summer Sport Guesser</h1>
                 </div>
             </div>
             <br>
@@ -54,25 +55,23 @@
                 </div>
             </div>
 
-            <br>
-            <!--TEXT INPUT-->
-            <span>Guess <input type="text" name="guess" id="guess-box"></span>
-            <br>
-            <button type="button" class="btn btn-secondary" id="guess-btn">Submit</button>
-
+            <div class="text-center content">
+                <br>
+                <!--TEXT INPUT-->
+                <span class="mx-auto">Guess <input type="text" name="guess" id="guess-box"></span>
+                <br>
+                <button type="button" class="btn btn-secondary margin-top content" id="guess-btn">Submit</button>
+            </div>
             <!--FEEDBACK-->
-            <div>
+            <div class="text-center margin-top content">
                 <p id="feedback"></p>
             </div>
-            <div>
-                <p>Score:</p>
-                <p id="score"></p>
+            <div class="text-center content">
+                <p>Round: <span id="round"></span></p>
             </div>
-            <div>
-                <p>Round:</p>
-                <p id="round"></p>
+            <div class="text-center content">
+                <p>Score: <span id="score"></span></p>
             </div>
-
 
             <!--PHASER WINDOW-->
             <div class="row h-100 justify-content-center align-items-center">
