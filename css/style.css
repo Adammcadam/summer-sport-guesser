@@ -18,6 +18,6 @@ body {
     font-size: 35px;
 }
 
-/*.sport-pic {*/
-/*    filter: blur(20px);*/
-/*}*/
+.sun {
+    color: yellow;
+}
