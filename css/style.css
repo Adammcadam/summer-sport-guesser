@@ -8,15 +8,8 @@ body {
     background-color: #308FFF;
 }
 
-.bg-image {
-    background-image: url("../bg-image/sun.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top left;
-}
-
 .bg-color {
-    background-color: #F8FF63;
+    background-color: #8DCC32;
 }
 
 /*Margins*/
