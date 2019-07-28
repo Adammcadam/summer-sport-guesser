@@ -53,7 +53,7 @@ $('#guess-btn').click(function() {
     $("#sport-pic").css({ 'filter': 'blur(' + blurTotal + 'px)' });
     // Store value of users guess
     guess = document.getElementById('guess-box').value.toLowerCase();
-    guess = guess.replace(' ', '-')
+    guess = guess.replace(' ', '')
     console.log(guess)
     $('#guess-box').val('')
     $('#guess-box').focus()
