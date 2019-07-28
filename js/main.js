@@ -63,6 +63,7 @@ $('#guess-btn').click(function() {
             $('#feedback').text("Wrong!");
             reward -= 20;
             $('#reward').text(reward)
+            blurTotal -= 4;
         }
         // If no points left and out of guesses
         else {
