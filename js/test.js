@@ -4,6 +4,9 @@ var images = ['archery', 'baseball', 'basketball', 'canoeing', 'climbing', 'cric
     'wakeboarding', 'waterpolo', 'weightlifting', 'whitewaterrafting', 'windsurfing', 'yoga'
 ]
 
+var pixel = 20
+var blurRemoval = 4
+var blurTotal = pixel - blurRemoval;
 var score = 0
 var reward = 100
 var turn = 1
@@ -22,6 +25,7 @@ $('#reward').text(reward)
 
 
 // Debugging
+console.log('blur', pixel)
 console.log('Score: ', score)
 console.log('Reward: ', reward)
 console.log('Turn: ', turn)
@@ -29,11 +33,10 @@ console.log('Round: ', round)
 console.log('Sport: ', sport)
 console.log('Guess: ', guess)
 
-// Tile overlay
-
-
 // New Round
 function f_new_round() {
+    // unblurs the image on each guess
+    $("#sport-pic").css({ 'filter' : 'blur(' + pixel + 'px)' });
     // Assign random sport to guess
     sport = images[Math.floor(Math.random() * num_images)]
     // Load image for round
@@ -51,6 +54,8 @@ function game_over() {
 
 // Guess Input
 $('#guess-btn').click(function() {
+    // Remove blur on each guess
+    $("#sport-pic").css({ 'filter' : 'blur(' + blurTotal + 'px)'});
     // Store value of users guess
     guess = document.getElementById('guess-box').value
     // Clear input field
@@ -85,5 +90,6 @@ $('#guess-btn').click(function() {
 })
 
 f_new_round()
-blockOverlay()
+console.log(pixel - blurRemoval)
+
 
