@@ -6,6 +6,10 @@ body {
     margin-top: 25px;
 }
 
+.margin-bottom {
+    margin-bottom: 90px;
+}
+
 .title {
     font-size: 70px;
 }
