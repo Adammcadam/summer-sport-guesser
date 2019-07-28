@@ -24,19 +24,12 @@ $('#round').text(round)
 $('#reward').text(reward)
 
 
-// Debugging
-console.log('blur', pixel)
-console.log('Score: ', score)
-console.log('Reward: ', reward)
-console.log('Turn: ', turn)
-console.log('Round: ', round)
-console.log('Sport: ', sport)
-console.log('Guess: ', guess)
+
 
 // New Round
 function f_new_round() {
     // blur the image on round start 
-    $("#sport-pic").css({ 'filter' : 'blur(' + pixel + 'px)'});
+    $("#sport-pic").css({ 'filter': 'blur(' + pixel + 'px)' });
     // Assign random sport to guess
     sport = images[Math.floor(Math.random() * num_images)]
     // Load image for round
@@ -54,28 +47,36 @@ function game_over() {
 
 // Guess Input
 $('#guess-btn').click(function() {
+
     // Remove blur on each guess
-    $("#sport-pic").css({ 'filter' : 'blur(' + blurTotal + 'px)'});
+    $("#sport-pic").css({ 'filter': 'blur(' + blurTotal + 'px)' });
     // Store value of users guess
     guess = document.getElementById('guess-box').value
     // Clear input field
     $('#guess-box').val('')
     $('#guess-box').focus()
 
-    if (guess != sport && reward >= 20) {
-        $('#feedback').text("Wrong!");
-        reward -= 20;
-        $('#reward').text(reward)
-    }
-    else if (guess != sport && reward < 20) {
-        $('#feedback').text("Wrong - Out of guesses. Correct answer was " + sport)
-        if (round < 6) {
-            f_new_round();
+    // If wrong guess
+    if (guess != sport) {
+        // If still points left
+        if (reward != 20) {
+            $('#feedback').text("Wrong!");
+            reward -= 20;
+            $('#reward').text(reward)
         }
+        // If no points left and out of guesses
         else {
-            game_over()
+            alert("No points remaining\nThe correct answer was " + sport);
+            $('#feedback').text(" ")
+            if (round < 6) {
+                f_new_round();
+            }
+            else {
+                game_over()
+            }
         }
     }
+    // If correct guess
     else {
         $('#feedback').text("Correct!");
         score += reward
@@ -87,9 +88,49 @@ $('#guess-btn').click(function() {
             game_over()
         }
     }
+
+
+
+
+
+    // if (guess != sport && reward != 20) {
+    //     $('#feedback').text("Wrong!");
+    //     reward -= 20;
+    //     $('#reward').text(reward)
+    // }
+    // else if (guess != sport && reward == 20) {
+    //     alert("No points remaining\nThe correct answer was " + sport);
+    //     $('#feedback').text(" ")
+    //     if (round < 6) {
+    //         f_new_round();
+    //     }
+    //     else {
+    //         game_over()
+    //     }
+    // }
+    // else {
+    //     $('#feedback').text("Correct!");
+    //     score += reward
+    //     $('#score').text(score)
+    //     if (round < 3) {
+    //         f_new_round();
+    //     }
+    //     else {
+    //         game_over()
+    //     }
+    // }
+
+
+    // Debugging
+    console.log('blur', pixel)
+    console.log('Score: ', score)
+    console.log('Reward: ', reward)
+    console.log('Turn: ', turn)
+    console.log('Round: ', round)
+    console.log('Sport: ', sport)
+    console.log('Guess: ', guess)
+
 })
 
 f_new_round()
 console.log(pixel - blurRemoval)
-
-
